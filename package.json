@@ -1,0 +1,22 @@
+{
+  "name": "crm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhanushkamath/REST-API-Nodejs-Express.git"
+  },
+  "author": "Dhanush Kamath",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dhanushkamath/REST-API-Nodejs-Express/issues"
+  },
+  "homepage": "https://github.com/dhanushkamath/REST-API-Nodejs-Express#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
