@@ -7,6 +7,12 @@
 // without having to manually restart it every time.
 // We provide babel configuration in a file that WE CREATE called .babelrc 
 // Always create .babelrc first.
+
+// ALSO EXPLORE THE FRAMEWORK - KOA.JS - BUILT BY THE SAME TEAM BEHIND EXPRESS.
+// Also explore Swagger.io, Loopback.io. 
+// The author recommends Loopback for full fledge API development with tokens for security measures.
+
+
 import express from 'express';
 
 //import our routes
@@ -26,11 +32,16 @@ mongoose.connect('mongodb://localhost/CRMdb', {
 })
 
 // bodyparser - to parse the incoming request.
-app.use(bodyParser.urlencoded( {extended: true}));
+app.use(bodyParser.urlencoded( {extended: true} ));
 app.use(bodyParser.json())
 
-// Pass the express app object.
+// Pass the express app object to the routes we have defined.
 routes(app);
+
+// Serving static files - images
+// Navigate to http://localhost:4000/sky.jpeg in the browser
+app.use(express.static('./public'))
+
 
 app.get('/', (req, res) => {
     res.send(`Node and express server running on port: ${PORT}`)

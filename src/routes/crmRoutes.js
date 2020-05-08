@@ -1,5 +1,11 @@
 // All routes are defined here
 
+import { AddNewContact, 
+         getContacts, 
+         getContactWithID,
+         updateContact,
+         deleteContact 
+} from '../controllers/crmController';
 
 const routes = (app) => {
     app.route('/contact')
@@ -14,22 +20,20 @@ const routes = (app) => {
             
             // Middleware complete - now pass it to the next function.
             next();
-        }, (req,res, next) => {
-            res.send(`Get request successful!`)
-        })
+        }, getContacts)
 
-
-        .post((req, res) => {
-            res.send('POST request successful!')
-        })
+        // Adding Post endpoint to create a new contact
+        .post(AddNewContact)
 
     app.route('/contact/:contactID')
-        .put((req,res) => {
-            res.send('PUT request successful!')
-        })
-        .delete((req, res) => {
-            res.send('DELETE request successful!')
-        })
+        // Adding GET endpoint to get a new contact
+        .get(getContactWithID)
+
+        // Updating a specific contact
+        .put(updateContact)
+
+        // Deleting a specific contact
+        .delete(deleteContact)
 
     
 }
